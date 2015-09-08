@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+      
+      <ui:composition template="template.xhtml">
+      
+	      <ui:define name="titulo">
+	      	Nova Corrida
+	      </ui:define>
+	      
+	      <ui:define name="conteudo">
+	      	
+		   <h:form>
+			   <fieldset>
+				   <legend>Dados da Corrida</legend>
+				      			
+				   <h:panelGrid columns="2">
+				      <h:outputLabel value="Lugar:" for="lugar" />
+				      <h:inputText id="lugar" value="#{corridaBean.corrida.lugar}"/>
+				      				
+				      <h:outputLabel value="Km:" for="km" />
+				      <h:inputText id="km" value="#{corridaBean.corrida.km}"/>
+				      				
+				      <h:outputLabel value="Tempo:" for="tempo" />
+				      <h:inputText id="tempo" value="#{corridaBean.corrida.tempo}" />
+				      				
+				      <h:outputLabel value="Data da Corrida:" for="dataCorrida" />
+				      <p:calendar id="dataCorrida" value="#{corridaBean.corrida.dataCorrida.time}" pattern="dd/MM/yyyy"
+				      	 timeZone="America/Sao_Paulo"/>
+				      				
+				      <h:commandButton value="Gravar" action="#{corridaBean.gravar}" />
+				      				
+				    </h:panelGrid>
+			    </fieldset>	
+		      		
+		    </h:form>
+		      	
+	      	</ui:define>
+	      	
+	      	<ui:define name="texto">
+	      		Cadastro de Corridas
+	      	</ui:define>
+      
+      </ui:composition>   	
+	    
+</html>
